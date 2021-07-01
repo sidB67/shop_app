@@ -105,8 +105,8 @@ class Products with ChangeNotifier{
           title: prodData['title'],
           description: prodData['description'],
           price: prodData['price'],
-         isFavourtie: prodData['isFavourite'],
-         imageUrl: prodData['imageUrl'],
+          isFavourtie: prodData['isFavourite'],
+          imageUrl: prodData['imageUrl'],
         ));
 
       }
