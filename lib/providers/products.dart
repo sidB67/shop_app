@@ -16,16 +16,17 @@ class Product with ChangeNotifier {
   final String imageUrl;
   bool isFavourtie;
 
-  Future<void> toggleFavourtieStatus()async {
+  Future<void> toggleFavourtieStatus(String authToken , String userid)async {
     final oldStatus = isFavourtie;
     isFavourtie = !isFavourtie;
     notifyListeners();
-    final url = Uri.parse('https://shopapp-e35ae-default-rtdb.firebaseio.com/products/$id.json');
+    print(userid);
+    final url = Uri.parse('https://shopapp-e35ae-default-rtdb.firebaseio.com/userFavourites/$userid/$id.json?auth=$authToken');
     try{
-      final response= await http.patch(url,
-      body: json.encode({
-        'isFavourite': isFavourtie
-      })
+      final response= await http.put(url,
+      body: json.encode(
+        isFavourtie,
+      )
       );
       if(response.statusCode>=400){
         isFavourtie=oldStatus;
