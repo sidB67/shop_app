@@ -61,7 +61,7 @@ class CartItems extends StatelessWidget {
               child: FittedBox(child: Text('$price')),
             ),
             title: Text(title),
-            subtitle: Text('Total: \$${price * quantity}'),
+            subtitle: Text('Total: ₹${price * quantity}'),
             trailing: Text('$quantity x'),
           ),
         ),

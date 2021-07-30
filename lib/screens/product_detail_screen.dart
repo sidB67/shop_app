@@ -21,7 +21,7 @@ class ProductDetialScreen extends StatelessWidget {
             child: Image.network(product.imageUrl,fit:BoxFit.cover)
           ),
           SizedBox(height:10),
-          Text('\$${product.price}',
+          Text('₹${product.price}',
             style: TextStyle(
             color: Colors.grey,
             fontSize: 20
